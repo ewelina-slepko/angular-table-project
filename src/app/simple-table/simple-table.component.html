@@ -1,0 +1,17 @@
+<div class="table-container" role="table" aria-label="Destinations">
+  <div class="flex-table header" role="rowgroup">
+    <div *ngFor="let header of headers" class="flex-row" role="columnheader">
+      {{ header }}
+    </div>
+  </div>
+
+  <div class="flex-table row" role="rowgroup" *ngFor="let el of data">
+    <div
+      class="flex-row"
+      role="cell"
+      *ngFor="let val of el | keyvalue; let i = index"
+    >
+      <span>{{ el[tableKeys[i]] }}</span>
+    </div>
+  </div>
+</div>
